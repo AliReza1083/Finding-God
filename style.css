@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+	scroll-behavior: smooth;
+}
+::selection {
+	background: black;
+	color: white;
+}
+nav {
+	width: 100%;
+	height: 60px;
+	background-color: transparent;
+	position: fixed;
+	transition: .3s;
+	color: white;
+	z-index: 1000;
+}	
+
+body {
+	height: 500vh;
+}
+
+header {
+	width: 100%;
+	height: 100vh;
+	background: url('image/earth.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: header 3s;
+}
+@keyframes header {
+	from {
+		background-size: 150%;
+		opacity: 0;
+		filter: grayscale(100%);
+	}
+	to {
+		background-size: 100%;
+		opacity: 1;
+		filter: grayscale(0%);
+	}
+}
+header h1{
+	font-size: 8em;
+	color: white;
+	font-family: 'Dancing Script', cursive;
+	text-shadow: 0 0 10px black;
+	transition: .3s;
+	animation: h1Header 3s;
+}
+header h1::selection {
+	background-color: white;
+	color: black;
+}
+@keyframes h1Header {
+	from {
+		transform: translateX(-100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+
+#firstSection {
+	padding: 100px 80px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+#firstSection p {
+	align-self: start;
+	position: sticky;
+	top: 70px;
+	left: 0;
+	line-height: 2;
+	letter-spacing: 1px;
+}
+#firstSection div {
+	width: 100%;
+	border-radius: 0 50px 50px 0;
+	overflow: hidden;
+	background: red;
+}
+#firstSection img {
+	width: 100%;
+	height: 100%;
+	transition: .3s;
+}
+#firstSection div img:hover {
+	transform: scale(1.2);
+}
+
+#secondSection h1::selection, #secondSection p::selection {
+	background: white;
+	color: black;
+}
+#secondSection {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	color: white;
+	background-color: black;
+	padding: 100px 80px;
+	border-radius: 100px 100px 0 0;
+}
+#secondSection video {
+	align-self: center;
+	position: sticky;
+}
+
+#secondSection div {
+	align-self: center;
+}
+#secondSection h1 {
+	font-size: 2.5em;
+}
+#secondSection h1, #secondSection p {
+	line-height: 2;
+	letter-spacing: 2px;
+}
+
+
+
+@media (max-width: 992px) {
+	header {
+		font-size: 13px;
+		animation: none;
+	}
+	#firstSection {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	#firstSection div {
+		display: none;
+	}
+	#secondSection h1 {
+		font-size: 2em;
+	}
+}
+@media (max-width: 768px) {
+	header {
+		font-size: 10px;
+	}
+	#secondSection {
+		grid-template-columns: repeat(1, 1fr);
+	}
+	#secondSection h1 {
+		font-size: 1.5em;
+	}
+	#secondSection p {
+		font-size: 15px;
+	}
+}
+@media (max-width: 576px) {
+	header {
+		font-size: 5px;
+	}
+	#firstSection, #secondSection {
+		padding: 100px 20px;
+	}
+	#firstSection p, #secondSection p {
+		font-size: 14px;
+	}
+	#secondSection {
+		border-radius: 50px 50px 0 0;
+	}
+}
